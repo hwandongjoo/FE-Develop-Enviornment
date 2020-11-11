@@ -15,6 +15,20 @@ module.exports = {
         test: /\.js$/,
         use: [path.resolve("./my-webpack-loader.js")],
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        // loader: "file-loader",
+        loader: "url-loader",
+        options: {
+          publicPath: "./dist/",
+          name: "[name].[ext]?[hash]",
+          limit: 20000, //20kb
+        },
+      },
     ],
   },
 };
