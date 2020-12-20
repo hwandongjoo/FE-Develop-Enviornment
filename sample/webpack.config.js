@@ -20,6 +20,7 @@ module.exports = {
     before: (app) => {
       app.use(apiMocker("/api", "mocks/api"));
     },
+    hot: true,
   },
   module: {
     rules: [
